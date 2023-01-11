@@ -35,9 +35,9 @@ ATTRIBUTE_TYPES = {
 }
 ```
 
-The `excluded_attributes` option takes an array of string of the attributes you want to exclude from the result.
+The `excluded_attributes` option takes an array of string of the attributes you want to exclude from the result. Default excluded attributes are: `id`, `created_at`, and `updated_at`.
 
-Then show the data either in your show page like so:
+Then show the field in your show page like so:
 
 ```ruby
 SHOW_PAGE_ATTRIBUTES = %i[

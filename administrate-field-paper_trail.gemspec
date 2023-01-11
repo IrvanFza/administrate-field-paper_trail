@@ -2,7 +2,7 @@ $:.push File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |gem|
   gem.name = "administrate-field-paper_trail"
-  gem.version = "0.0.1"
+  gem.version = "0.1.0"
   gem.authors = ["Irvan Fauziansyah"]
   gem.email = ["ervhan@gmail.com"]
   gem.homepage = "https://github.com/IrvanFza/administrate-field-paper_trail"
