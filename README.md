@@ -7,9 +7,9 @@ An [Administrate](https://github.com/thoughtbot/administrate/) plugin to show re
 
 ## Requirements
 
-- Ruby on Rails version ~> 5.0
-- Administrate version ~> 0.2.2
-- PaperTrail version ~> 2.7.2
+- Ruby on Rails version >= 5.0
+- Administrate version >= 0.2.2
+- PaperTrail version >= 2.7.2
 
 ## Installation
 
