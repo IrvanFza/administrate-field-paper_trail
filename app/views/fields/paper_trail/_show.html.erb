@@ -1,0 +1,42 @@
+<%#
+# PaperTrail Show Partial
+
+This partial renders a paper_trail attribute,
+to be displayed on a resource's show page.
+
+By default, the attribute is rendered as a table tag.
+
+## Local variables:
+
+- `field`:
+  An instance of [Administrate::Field::Image][1].
+  A wrapper around the image url pulled from the database.
+
+[1]: http://www.rubydoc.info/gems/administrate/Administrate/Field/Image
+%>
+
+<% versions = field.resource.versions %>
+<% if versions.present? %>
+  <table aria-describedby="Record Changes">
+    <thead>
+    <tr>
+      <th width="10%">Action</th>
+      <th width="10%">Updated By</th>
+      <th width="10%">Updated At</th>
+      <th>Changes</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% versions.each do |version| %>
+      <tr>
+        <td width="10%"><%= version.event %></td>
+        <td width="10%"><%= version.whodunnit %></td>
+        <td width="10%"><%= version.created_at %></td>
+        <td><%= field.humanize_changeset(version.changeset) %></td>
+      </tr>
+    <% end %>
+    <tbody>
+  </table>
+<% else %>
+  -
+<% end %>
