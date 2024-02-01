@@ -11,6 +11,10 @@ module Administrate
         options.fetch(:excluded_attributes, %w[id created_at updated_at])
       end
 
+      def whodunnit(id)
+        options.fetch(:whodunnit_model, 'User')&.constantize&.find_by(id:)
+      end
+
       def humanize_changeset(changeset)
         result = ''
         changeset.each do |attribute, values|
