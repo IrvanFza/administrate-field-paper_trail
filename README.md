@@ -31,11 +31,13 @@ Add to your `UserDashboard`:
 
 ```ruby
 ATTRIBUTE_TYPES = {
-  changeset: Field::PaperTrail.with_options(excluded_attributes: %w[created_at updated_at]),
+  changeset: Field::PaperTrail.with_options(excluded_attributes: %w[created_at updated_at], whodunnit_model: 'User'),
 }
 ```
 
 The `excluded_attributes` option takes an array of string of the attributes you want to exclude from the result. Default excluded attributes are: `id`, `created_at`, and `updated_at`.
+
+The `whodunnit_model` defines which model to search for whoever made the change, and to link to it. Defaults to `'User'`.
 
 Then show the field in your show page like so:
 
